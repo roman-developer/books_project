@@ -21,3 +21,18 @@
 
 en:
   hello: "Hello world"
+  books:
+    title: Book list
+    create_book: Create new book
+    edit_book: Edit
+    new:
+      chapters: Chapters
+      add_chapter: Add chapter
+      update: Update book
+      create: Create book
+      remove_chapter: Remove chapter
+      image: Image
+  general:
+    back: Go back
+    message:
+      delete: Are you sure to delete it?

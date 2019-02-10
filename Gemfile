@@ -38,6 +38,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Faker to generate test data
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
+# Use Cocoon to nested fields
+gem "cocoon"
+
+# Use Carrierwave to upload images
+gem 'carrierwave', '~> 1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

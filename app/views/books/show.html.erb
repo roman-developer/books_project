@@ -1,5 +1,6 @@
 <h1><%= @book.title %></h1>
 <p><%= @book.description %></p>
+<%= @book.image_url.present? ? image_tag(@book.image_url, alt: "image", size: "100") : '' %>
 
 <% @chapters.each do|chapter| %>
 	<h2><%= chapter.title %></h2>
