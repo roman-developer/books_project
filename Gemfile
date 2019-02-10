@@ -54,6 +54,9 @@ gem 'bootstrap-kaminari-views'
 # Use fontawesome to include awesome icons
 gem "font-awesome-rails"
 
+# Use Globalize to build on the I18n to add model translations to ActiveRecord models.
+gem 'globalize', '~> 5.1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

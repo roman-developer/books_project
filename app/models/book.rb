@@ -4,6 +4,7 @@ class Book < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  translates :title, :description, fallbacks_for_empty_translations: true
 
 	validates :title, presence: true
 end

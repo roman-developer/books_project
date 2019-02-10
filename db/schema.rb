@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190210114336) do
+ActiveRecord::Schema.define(version: 20190210190332) do
+
+  create_table "book_translations", force: :cascade do |t|
+    t.integer  "book_id",     null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "title"
+    t.text     "description"
+    t.index ["book_id"], name: "index_book_translations_on_book_id"
+    t.index ["locale"], name: "index_book_translations_on_locale"
+  end
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -18,6 +29,17 @@ ActiveRecord::Schema.define(version: 20190210114336) do
     t.string   "image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "chapter_translations", force: :cascade do |t|
+    t.integer  "chapter_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+    t.text     "content"
+    t.index ["chapter_id"], name: "index_chapter_translations_on_chapter_id"
+    t.index ["locale"], name: "index_chapter_translations_on_locale"
   end
 
   create_table "chapters", force: :cascade do |t|
