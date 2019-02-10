@@ -1,0 +1,37 @@
+es:
+  hello: "Hello world"
+  menu:
+    home: Inicio
+  books:
+    title: Lista de libros
+    create_book: Crear nuevo libro
+    edit_book: Editar
+    new:
+      chapters: Capítulos
+      add_chapter: Añadir capítulo
+      update: Actualizar libro
+      create: Crear libro
+      remove_chapter: Borrar capítulo
+      image: Imagen
+      title: Título
+      description: Descripción
+      content: Contenido
+    modal:
+      delete_header: Borrar libro
+      delete_body: '¿Está seguro de borrar el libro <b>%{title}</b>?'
+  general:
+    back: Volver
+    edit: Editar
+    delete: Borrar
+    messages:
+      created: Creado satisfactoriamente
+      deleted: Borrado satisfactoriamente
+      updated: Actualizado satisfactoriamente
+      confirm_delete: ¿Está seguro de eliminarlo?
+  views:
+    pagination:
+      first: "&laquo; Primero"
+      last: "Último &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Siguiente &rsaquo;"
+      truncate: "&hellip;"

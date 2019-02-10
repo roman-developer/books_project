@@ -13,6 +13,12 @@
       <%= menu_group do %>
         <%= menu_item I18n.t('menu.home'), books_path %>
       <% end %>
+      <%= menu_group pull: :right do %>
+        <%= drop_down fa_icon "flag-o" do %>
+          <%= menu_item link_to 'ES'.html_safe, { :locale=>'es' } %>
+          <%= menu_item link_to 'EN'.html_safe, { :locale=>'en' } %>
+        <% end %>
+      <% end %>      
     <% end %>
 	  <div class="container">
       <% if flash[:alert] %>

@@ -10,14 +10,14 @@
 		<div class="row">
 			<div class="col-md-12">
 	      <div class="form-group row">
-					<%= f.label :title, class: 'col-sm-2 col-form-label' %>
+					<%= f.label :title, I18n.t('books.new.title'), class: 'col-sm-2 col-form-label' %>
 					<div class="col-sm-10"><%= f.text_field :title, class: "form-control" %></div>
 				</div>
 			</div>
 
 			<div class="col-md-12">
 	      <div class="form-group row">
-					<%= f.label :description, class: 'col-sm-2 col-form-label' %>
+					<%= f.label :description, I18n.t('books.new.description'), class: 'col-sm-2 col-form-label' %>
 					<div class="col-sm-10"><%= f.text_area :description, class: "form-control" %></div>
 				</div>
 			</div>
@@ -25,7 +25,7 @@
 
 			<div class="col-md-12">
 	      <div class="form-group row">
-			  	<%= f.label :image, "#{I18n.t('books.new.image')}", class: 'col-sm-2 col-form-label'%>
+			  	<%= f.label :image, I18n.t('books.new.image'), class: 'col-sm-2 col-form-label'%>
 			  	<div class="col-sm-10"><%= f.file_field :image %></div>
 	  		</div>
 			</div>

@@ -34,6 +34,9 @@ en:
       create: Create book
       remove_chapter: Remove chapter
       image: Image
+      title: Title
+      description: Description
+      content: Content
     modal:
       delete_header: Delete book
       delete_body: 'Are you sure to delete <b>%{title}</b>?'
@@ -46,3 +49,10 @@ en:
       deleted: Deleted successfully
       updated: Updated successfully
       confirm_delete: Are you sure to delete it?
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
