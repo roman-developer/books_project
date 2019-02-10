@@ -42,6 +42,7 @@
 		</div>
 
 		<div class="btn-submit-form">
+			<%= link_to I18n.t('general.back'), books_path, class: 'btn btn-sm btn-default pull-left' %>
 			<% if @book.persisted? %>
 				<%= f.submit I18n.t('books.new.update'), class: "btn btn-primary" %>
 			<% else %>
