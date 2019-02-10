@@ -35,3 +35,10 @@ es:
       previous: "&lsaquo; Anterior"
       next: "Siguiente &rsaquo;"
       truncate: "&hellip;"
+  activerecord:
+    errors:
+      models:
+        book:
+          attributes:
+            title:
+              blank: El título no puede estar en blanco
