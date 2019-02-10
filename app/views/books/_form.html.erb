@@ -1,0 +1,16 @@
+<% if @book.persisted? %>
+	<h2><%= I18n.t('books.edit.title') %>&nbsp;-&nbsp;<%= @book.title %></h2>
+<% else %>
+	<h2><%= I18n.t('books.new.new_book') %></h2>
+<% end %>
+
+<%= form_for @book, html:{class: "form-horizontal"}  do |f| %>
+	<%= f.text_field :title, class: "form-control"  %>
+	<%= f.text_area :description, class: "form-control" %>
+
+	<% if @book.persisted? %>
+		<%= f.submit I18n.t('books.new.update'), class: "btn btn-success" %>
+	<% else %>
+		<%= f.submit I18n.t('books.new.create'), class: "btn btn-success" %>
+	<% end %>
+<% end %>

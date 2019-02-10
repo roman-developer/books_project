@@ -9,6 +9,15 @@
   </head>
 
   <body>
-    <%= yield %>
+
+  	<div class="container">
+      <% if flash[:alert] %>
+        <div class="alert alert-danger"><%= flash[:alert] %><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
+      <% end %>
+      <% if flash[:notice] %>
+        <div class="alert alert-info"><%= flash[:notice] %><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

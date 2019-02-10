@@ -1,0 +1,7 @@
+<h1>Books list</h1>
+<%= link_to 'Create book', new_book_path %>
+<ul>
+	<% @books.each do|book| %>
+		<li><%= book.title %> - <%= link_to 'Show', book_path(book) %> - <%= link_to 'Edit', edit_book_path(book) %> - <%= link_to 'Delete', book_path(book), data: {confirm: I18n.t('general.message.delete')}, method: :delete %></li>
+	<% end %>
+</ul>
