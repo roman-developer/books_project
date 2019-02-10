@@ -1,9 +1,20 @@
 <h1><%= @book.title %></h1>
-<p><%= @book.description %></p>
-<%= @book.image_url.present? ? image_tag(@book.image_url, alt: "image", size: "100") : '' %>
+<div class="main-view">
+	<div class="row">
+		<div class="col-md-2">
+			<%= @book.image_url.present? ? image_tag(@book.image_url, alt: "image", size: "150") : fa_icon("book", class: "fa-5x") %>
+		</div>
+		<div class="col-md-10">
+			<p><%= @book.description %></p>
+		</div>
+	</div>
 
-<% @chapters.each do|chapter| %>
-	<h2><%= chapter.title %></h2>
-	<p><%= chapter.content %></p>
-	<hr>
-<% end %>
+	<% if @chapters.any? %>
+		<% @chapters.each do|chapter| %>
+			<div class="chapter-detail">
+				<h2><%= chapter.title %></h2>
+				<p><%= chapter.content %></p>
+			</div>
+		<% end %>
+	<% end %>
+</div>

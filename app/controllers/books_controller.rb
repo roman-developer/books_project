@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 	before_action :load_book, :load_chapters, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@books = Book.all
+		@books = Book.page(params[:page]).per(5)
 	end
 
 	def show ; end
@@ -15,7 +15,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     # @book.user = current_user
     if @book.save
-      redirect_to books_path, notice: I18n.t('messages.created_book')
+      redirect_to books_path, notice: I18n.t('messages.created')
     else
       flash[:alert] =  @book.errors.full_messages
       render :new
@@ -26,7 +26,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update_attributes(book_params)
-      redirect_to book_path(@book), notice: I18n.t('messages.updated_book')
+      redirect_to book_path(@book), notice: I18n.t('general.messages.updated')
     else
       flash[:alert] =  @book.errors.full_messages
       render :edit
@@ -35,7 +35,7 @@ class BooksController < ApplicationController
 
   def destroy
     @book.destroy
-    redirect_to books_path, notice: I18n.t('messages.deleted_book')
+    redirect_to books_path, notice: I18n.t('general.messages.deleted')
   end
 
 	private

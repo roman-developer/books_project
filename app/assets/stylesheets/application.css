@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+ @import "font-awesome";
+ @import "navbar.scss";
+
+.logo-app{
+  margin-top: 15%;
+  margin-bottom: 15%;
+  height: 40px;
+  width: 40px;
+  vertical-align: middle;
+}
+
+.main-view{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.pagination-custom{
+	text-align: center;
+}
+
+.btn-submit-form{
+	margin-top: 10px;
+	text-align: right;
+}
+
+.remove-chapter{
+	padding: 5px;
+	text-align: right;	
+}
+
+.remove-chapter a{
+	text-decoration-line: none;
+	color: #ff0000 !important;	
+}
+
+.chapter-detail{
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-top: 10px;
+	padding: 10px;
+  background-color: #f2f2f2;
+}
+

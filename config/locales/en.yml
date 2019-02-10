@@ -21,6 +21,8 @@
 
 en:
   hello: "Hello world"
+  menu:
+    home: Home
   books:
     title: Book list
     create_book: Create new book
@@ -32,7 +34,15 @@ en:
       create: Create book
       remove_chapter: Remove chapter
       image: Image
+    modal:
+      delete_header: Delete book
+      delete_body: 'Are you sure to delete <b>%{title}</b>?'
   general:
     back: Go back
-    message:
-      delete: Are you sure to delete it?
+    edit: Edit
+    delete: Delete
+    messages:
+      created: Created successfully
+      deleted: Deleted successfully
+      updated: Updated successfully
+      confirm_delete: Are you sure to delete it?

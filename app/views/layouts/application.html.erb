@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BooksProject</title>
+    <title>Books Project</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,15 +9,19 @@
   </head>
 
   <body>
-
-  	<div class="container">
+    <%= nav_bar responsive: true, brand: image_tag("book_logo.png", alt: "Books Project", class: "img-circle logo-app") do %>
+      <%= menu_group do %>
+        <%= menu_item I18n.t('menu.home'), books_path %>
+      <% end %>
+    <% end %>
+	  <div class="container">
       <% if flash[:alert] %>
         <div class="alert alert-danger"><%= flash[:alert] %><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
       <% end %>
       <% if flash[:notice] %>
         <div class="alert alert-info"><%= flash[:notice] %><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></div>
       <% end %>
-      <%= yield %>
-    </div>
+      <%= yield %> 
+    </div>       
   </body>
 </html>

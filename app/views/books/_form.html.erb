@@ -4,34 +4,49 @@
 	<h2><%= I18n.t('books.create_book') %></h2>
 <% end %>
 
-<%= form_for @book, html:{class: "form-horizontal"}  do |f| %>
-	<div class="field">
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-	</div>
-	<div class="field">
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</div>
+<div class="main-view">
+	<%= form_for @book, html:{class: "form-horizontal"}  do |f| %>
 
-  <div class="field">
-  	<%= f.label :image, "#{I18n.t('books.new.image')}*", class: 'col-sm-2 col-form-label'%>
-  	<div class="col-sm-10"><%= f.file_field :image %></div>
-	</div>
+		<div class="row">
+			<div class="col-md-12">
+	      <div class="form-group row">
+					<%= f.label :title, class: 'col-sm-2 col-form-label' %>
+					<div class="col-sm-10"><%= f.text_field :title, class: "form-control" %></div>
+				</div>
+			</div>
+
+			<div class="col-md-12">
+	      <div class="form-group row">
+					<%= f.label :description, class: 'col-sm-2 col-form-label' %>
+					<div class="col-sm-10"><%= f.text_area :description, class: "form-control" %></div>
+				</div>
+			</div>
 
 
-	<h3><%= I18n.t('books.new.chapters') %></h3>
+			<div class="col-md-12">
+	      <div class="form-group row">
+			  	<%= f.label :image, "#{I18n.t('books.new.image')}", class: 'col-sm-2 col-form-label'%>
+			  	<div class="col-sm-10"><%= f.file_field :image %></div>
+	  		</div>
+			</div>
+		</div>
 
-	<div class="chapters">
-		<%= f.fields_for :chapters do|chapter| %>
-			<%= render 'chapter_fields', f: chapter %>
-		<% end %>
-	</div>
-	<%= link_to_add_association I18n.t('books.new.add_chapter'), f, :chapters, class: 'btn btn-primary', data: {association_insertion_node: '.chapters', association_insertion_method: :append} %>
+		<div class="row">
+			<h3><%= I18n.t('books.new.chapters') %></h3>
+			<div class="chapters">
+				<%= f.fields_for :chapters do|chapter| %>
+					<%= render 'chapter_fields', f: chapter %>
+				<% end %>
+			</div>
+			<%= link_to_add_association I18n.t('books.new.add_chapter'), f, :chapters, class: 'btn btn-default', data: {association_insertion_node: '.chapters', association_insertion_method: :append} %>
+		</div>
 
-	<% if @book.persisted? %>
-		<%= f.submit I18n.t('books.new.update'), class: "btn btn-success" %>
-	<% else %>
-		<%= f.submit I18n.t('books.new.create'), class: "btn btn-success" %>
+		<div class="btn-submit-form">
+			<% if @book.persisted? %>
+				<%= f.submit I18n.t('books.new.update'), class: "btn btn-primary" %>
+			<% else %>
+				<%= f.submit I18n.t('books.new.create'), class: "btn btn-primary" %>
+			<% end %>
+		</div>
 	<% end %>
-<% end %>
+</div>

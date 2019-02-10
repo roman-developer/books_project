@@ -44,6 +44,16 @@ gem "cocoon"
 # Use Carrierwave to upload images
 gem 'carrierwave', '~> 1.0'
 
+# Bootstrap is a toolkit from Twitter designed to kickstart development of web apps and sites. It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
+gem "twitter-bootstrap-rails"
+
+# Use kaminari to paginate items
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+
+# Use fontawesome to include awesome icons
+gem "font-awesome-rails"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
